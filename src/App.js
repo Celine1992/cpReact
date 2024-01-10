@@ -1,68 +1,35 @@
-// Importez les modules nécessaires depuis React et react-bootstrap
-import React from 'react';
-import { Container, Navbar, Nav, Card, Row, Col } from 'react-bootstrap';
+import React from 'react'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-// Définissez le composant App
-function App() {
+ const NavBar = () => {
   return (
-    <React.Fragment>
-      <div className="App">
-        {/* Barre de navigation */}
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand href="#home">Mon Projet React</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Link href="#features">Fonctionnalités</Nav.Link>
-              <Nav.Link href="#about">À Propos</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
-
-        {/* En-tête */}
-        <Container className="mt-3">
-          <h1>Bienvenue dans mon application React avec react-bootstrap!</h1>
-        </Container>
-
-        {/* Cartes */}
-        <Container className="mt-3">
-          <Row>
-            <Col>
-              <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                  <Card.Title>Carte 1</Card.Title>
-                  <Card.Text>
-                    Contenu de la carte 1.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                  <Card.Title>Carte 2</Card.Title>
-                  <Card.Text>
-                    Contenu de la carte 2.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                  <Card.Title>Carte 3</Card.Title>
-                  <Card.Text>
-                    Contenu de la carte 3.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </React.Fragment>
-  );
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container>
+      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#link">Link</Nav.Link>
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              Separated link
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+  )
 }
 
-// Exportez le composant App
-export default App;
+export default NavBar
